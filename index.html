@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>കുട്ടിയുടെ വിവരങ്ങൾ</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #4f46e5;
+      --secondary-color: #4338ca;
+      --accent-color: #818cf8;
+      --text-color: #1e293b;
+    }
+
+    body {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      background: linear-gradient(135deg, #f0f4ff 0%, #f8fafc 100%);
+      color: var(--text-color);
+      padding: 2rem;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+
+    h1 {
+      text-align: center;
+      color: var(--primary-color);
+      margin-bottom: 2rem;
+      font-size: 2.2rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      position: relative;
+      padding-bottom: 1rem;
+    }
+
+    h1::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 3px;
+      background: var(--accent-color);
+      border-radius: 2px;
+    }
+
+    form {
+      max-width: 800px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 2.5rem;
+      border-radius: 16px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .form-row {
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .form-group {
+      flex: 1;
+      position: relative;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+      color: var(--primary-color);
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    input {
+      width: 100%;
+      padding: 1rem 1rem 1rem 2.5rem;
+      border: 2px solid #e2e8f0;
+      border-radius: 8px;
+      box-sizing: border-box;
+      transition: all 0.3s ease;
+      font-size: 1rem;
+      background-color: #f8fafc;
+    }
+
+    input:focus {
+      outline: none;
+      border-color: var(--accent-color);
+      box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.2);
+    }
+
+    .input-icon {
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--primary-color);
+      font-size: 1.1rem;
+    }
+
+    input[type="file"] {
+      padding: 0.75rem;
+      border: 2px dashed #cbd5e1;
+      background: #f8fafc;
+      position: relative;
+      padding-left: 2.5rem;
+    }
+
+    input[type="file"]::file-selector-button {
+      background: var(--primary-color);
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 6px;
+      margin-right: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    input[type="file"]::file-selector-button:hover {
+      background: var(--secondary-color);
+    }
+
+    button {
+      width: 100%;
+      padding: 1.25rem;
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      letter-spacing: 0.5px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+    }
+
+    button::after {
+      content: "→";
+      position: absolute;
+      right: 1.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.2rem;
+      transition: right 0.3s ease;
+    }
+
+    button:hover::after {
+      right: 1.2rem;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 1rem;
+      }
+      
+      form {
+        padding: 1.5rem;
+      }
+      
+      h1 {
+        font-size: 1.8rem;
+      }
+
+      .form-row {
+        flex-direction: column;
+        gap: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>കുട്ടിയുടെ വിവരങ്ങൾ</h1>
+  <form enctype="multipart/form-data">
+    <div class="form-row">
+      <div class="form-group">
+        <label for="name"><i class="fas fa-user"></i>1. കുട്ടിയുടെ പേര് :</label>
+        <input type="text" id="name" name="name" />
+      </div>
+      
+      <div class="form-group">
+        <label for="class"><i class="fas fa-graduation-cap"></i>2. പഠിക്കുന്ന ക്ലാസ്സ്‌ :</label>
+        <input type="text" id="class" name="class" />
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="school"><i class="fas fa-school"></i>3. പഠിക്കുന്ന സ്കൂൾ </label>
+      <input type="text" id="school" name="school" />
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="motherName"><i class="fas fa-female"></i>4. മാതാവിന്റെ പേര് :</label>
+        <input type="text" id="motherName" name="motherName" />
+      </div>
+      
+      <div class="form-group">
+        <label for="motherPhone"><i class="fas fa-phone"></i>5. മാതാവിന്റെ ഫോൺ :</label>
+        <input type="text" id="motherPhone" name="motherPhone" />
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="fatherName"><i class="fas fa-male"></i>6. പിതാവിന്റെ പേര് :</label>
+        <input type="text" id="fatherName" name="fatherName" />
+      </div>
+      
+      <div class="form-group">
+        <label for="fatherPhone"><i class="fas fa-phone"></i>7. പിതാവിന്റെ ഫോൺ :</label>
+        <input type="text" id="fatherPhone" name="fatherPhone" />
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="child_documentId"><i class="fas fa-id-card"></i>8. കുട്ടിയുടെ ഡോക്യുമെന്റ് ഐഡി :</label>
+        <input type="text" id="child_documentId" name="child_documentId" />
+      </div>
+      
+      <div class="form-group">
+        <label for="idImage"><i class="fas fa-camera"></i>9. കുട്ടിയുടെ ഡോക്യുമെന്റ് ചിത്രം :</label>
+        <input type="file" id="idImage" name="idImage" accept="image/*" />
+      </div>
+    </div>
+    <p><strong>കൂടുതൽ വിവരങ്ങൾക്ക് ഈ നമ്പരിൽ ബന്ധപ്പെടുക:</strong> 9400598000</p>
+
+    <button type="submit">
+      സമർപ്പിക്കുക
+    </button>
+  </form>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+
+<script>
+  document.querySelector("form").addEventListener("submit", async function (e) {
+    e.preventDefault();
+    const form = this;
+    const formData = new FormData(this);
+
+    try {
+      const response = await axios.post("http://68.178.163.246:8010/api/register", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data"
+        }
+      });
+
+      const result = response.data;
+      console.log(result)
+       form.reset();
+      alert(result.status === "success" ? "Registration successful!" : result.message);
+    } catch (error) {
+      // alert("Error submitting form");
+      console.error(error);
+    }
+  });
+</script>
+
+</body>
+</html>
