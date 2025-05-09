@@ -200,7 +200,7 @@
             <td>${child.fatherPhone}</td>
             <td><span class="badge bg-secondary">${child.child_documentId}</span></td>
             <td>
-              <a href="${child.idImage}" class="document-link" target="_blank">ചിത്രം കാണുക</a>
+              <a href="http://68.178.163.246:8010/cdn?file=${child.idImage.name}" class="document-link" target="_blank">ചിത്രം കാണുക</a>
             </td>
             <td>
               <button class="btn btn-approve" onclick="approveChild('${child._id}', this)" ${isApproved ? 'disabled' : ''}>
